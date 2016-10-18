@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Random Number Table</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+
+        <input type="text" name="num" />
+        <input type="button" name="generatetable"  value="generate grid" />
+
+
+        <table>
+
+        </table>
+        <script type="text/javascript">
+
+        //Error in Color if-statement line 54
+
+            function randomNumber(min, max) {
+
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+
+            }
+
+            var generateBtn = document.querySelector('input[name="generatetable"]');
+
+
+            generateBtn.addEventListener('click', generate); //Generates table on click
+
+            function generate() {
+
+                var inputNumber = document.querySelector('input[name="num"]').value;
+   
+
+                var table = document.querySelector('table');
+
+
+                for (var i = 0; i < inputNumber; i++) {
+
+                    var tablerow = table.insertRow(); //inserts table row
+                    //
+                    //
+                    //if statment here to generate colors
+                        //If statement semi-works, else statement dosent work
+                        
+                    /*if (randNum % 3) //use Modulus????
+                        {
+                          tabledata.style.backgroundColor = "#ff0000"  //red
+ 
+                        }
+                       else (randNum % 2)
+                        {
+                           tabledata.style.backgroundColor = "#0000ff" //blue
+                        }*/
+
+                    for (var j = 0; j < inputNumber; j++) {
+                        var randNum = randomNumber(1, 100);
+                        //if statment here to generate colors
+                        //If statement semi-works, else statement dosent work
+                       /* if (randNum % 3)
+                        {
+                          tabledata.style.backgroundColor = "#ff0000"  //red
+ 
+                        }
+                       /*else (randNum / 2)
+                        {
+                           tabledata.style.backgroundColor = "#0000ff" //blue
+                        }*/
+                        
+                        
+                        var tabledata = tablerow.insertCell();
+                        tabledata.appendChild(document.createTextNode(randNum)); //fills table with randomNum
+                        //table styling
+                        tabledata.style.border = '1px solid black';
+                        tabledata.style.padding = "5px 5px";
+                        
+                        
+                        
+                        
+                    }
+                   
+                }
+            }
+
+
+
+
+
+
+        </script>
+    </body>
+</html>
