@@ -32,10 +32,14 @@
                 console.log('document loaded');
             });
            
-           $("div").on("click", function(){
+           $().on("click", function(){
                 $(this).hide('slow');
             });
             
+            
+           /*$("div").on("click", function(){
+                $(this).css("background-color", "lightblue");
+            });*/
             $(document).on("dblclick", function(){
                 $('div').show('slow');
             });
